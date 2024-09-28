@@ -1,20 +1,25 @@
 program bubble_sort;
 
-var massive: array [0..999] of integer;
-i, j, tmp: integer;
+var
+    massive: array [0..999] of integer;
+    i, j, tmp: integer;
 
 begin
     {generates random number from [0 ; 1000] and puts it into massive}
-    for i := 0 to 999 do begin
+    for i := 0 to 999 do
+    begin
         massive[i] := Random(1001);
     end;
 
     {sorts massive}
-    for i := 0 to 998 do begin
+    for i := 0 to 998 do
+    begin
         {walks through massive}
-        for j := 0 to 999 do begin
+        for j := 0 to 999 do
+        begin
             {swaps variables if their order is incorrect}
-            if (massive[j] < massive[j-1]) then begin
+            if (massive[j] < massive[j-1]) then
+            begin
                 tmp := massive[j-1];
                 massive[j-1] := massive[j];
                 massive[j] := tmp;
@@ -25,4 +30,5 @@ begin
 
     {prints all numbers from massive}
     for i := 0 to 999 do write(massive[i], ' ');
+    writeln()
 end.
